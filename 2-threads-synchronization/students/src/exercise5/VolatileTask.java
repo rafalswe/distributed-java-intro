@@ -2,7 +2,7 @@ package exercise5;
 
 public class VolatileTask implements Runnable {
 
-    private boolean isRunning = true;
+    private volatile boolean  isRunning = true;
 
     @Override
     public void run() {
@@ -14,6 +14,6 @@ public class VolatileTask implements Runnable {
     }
 
     public void end() {
-        isRunning = false;
+         isRunning = false;
     }
 }
