@@ -67,7 +67,9 @@ public class Recipient implements Runnable {
 					Thread.sleep(5000);
 				}
 			}
-			
+			synchronized (System.out)
+			{
+				
 			System.out.println(this.getName() + " says good bye leaving with items: ");
 			if(wonItems.size() != 0)
 				for(int i = 0; i < wonItems.size(); i++)
@@ -76,6 +78,7 @@ public class Recipient implements Runnable {
 				}
 			else
 				System.out.println("NO ITEMS");
+			}
 		}
 		catch (InterruptedException e)
 		{}
